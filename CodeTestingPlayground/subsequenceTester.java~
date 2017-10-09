@@ -1,0 +1,11 @@
+import java.util.*;
+
+public class subsequenceTester{
+  public static void main[] (String[] args){
+  
+    Object x = "Mara khao".subsequence("ara kha");
+    
+    System.out.print(x);
+    
+  }
+}
