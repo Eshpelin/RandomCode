@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>Authors</h1>
+    <ul id="authors"></ul>
+
+    <script>
+        function createNode(element) {
+            return document.createElement(element);
+        }
+
+        function append(parent, el) {
+            return parent.appendChild(el);
+        }
+
+        const ul = document.getElementById('authors');
+        const url = 'https://www.udemy.com/api-2.0/courses/?page=1&page_size=10';
+        fetch(url), {
+                method: "GET",
+                headers: {
+
+                    "Authorization": "Basic MHYzdkYza1E2UWNTVlh6UDh6cHI0ZzlDck9scFZ3eWI4eHpieTV3RTp2TkZtbVRrbFo1Y2o5OHZBNnJTZFhjakFIYjdxbmJjYk80ejRzbEZKa1VsaG1ZUXBxVUZuRmlUS2UxcjVzQ2t1bzR0Q25WWTlaOVE4cmp1Tm1ROGJMbloyTndnVWdPUDg1U1hVekhQZGxiY1FzVFY2QmlFUFFpR2UyZWNvUDU1Ug==",
+                    "Accept": "application/json, text/plain, */*"
+
+                }
+            .then((resp) => resp.json())
+            .then(function(data) {
+                let authors = data.results;
+                return authors.map(function(author) {
+                    let li = createNode('li'),
+                        img = createNode('img'),
+                        span = createNode('span');
+                    img.src = author.picture.medium;
+                    span.innerHTML = `${author.name.first} ${author.name.last}`;
+                    append(li, img);
+                    append(li, span);
+                    append(ul, li);
+                })
+            })
+            .catch(function(error) {
+                console.log(error);
+            })
+        }
+
+    </script>
+
+</body>
+
+</html>

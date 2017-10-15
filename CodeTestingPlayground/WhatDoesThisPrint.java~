@@ -1,0 +1,9 @@
+public class WhatDoesThisPrint
+{
+  public static void main(String[] args)
+  {
+    String x = "string 1";
+    Object y = (Object) x;
+    Print(y);
+  }
+}
