@@ -41,8 +41,17 @@ class ThirdGLEventListener implements GLEventListener {
         /*
          * put your code here
          */
-        drawLine(gl, 0f, 0f, 100f, 0f);
-        drawLine(gl, 50f, -50f, 100f, 0f);
+        drawLine(gl, 2f, 14f, 3.5f, 9f);
+        drawLine(gl, 3.5f, 9f, 0f, 5.5f);
+        drawLine(gl, 0f, 5.5f, 5f, 5f);
+        drawLine(gl, 5f, 5f, 6.5f, 0f);
+        drawLine(gl, 6.5f, 0f, 9f, 5f);
+        drawLine(gl, 9f, 5f, 14f, 5.5f);
+        drawLine(gl, 14f, 5.5f, 10.5f, 9f);
+        drawLine(gl, 10.5f, 9f, 12f, 14f);
+        drawLine(gl, 12f, 14f, 6.5f, 11.5f);
+        drawLine(gl, 6.5f, 11.5f, 2f, 14f);
+
         ;
     }
 
