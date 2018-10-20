@@ -41,33 +41,44 @@ class ThirdGLEventListener implements GLEventListener {
         /*
          * put your code here
          */
-
-        Scanner work=new Scanner(System.in);
-        int r=work.nextInt();
-        ArrayList<Integer> x_list = new ArrayList<>();
-        ArrayList<Integer> y_list = new ArrayList<>();
-        for (int i = 0; i < 5; i++)
-        {
-            double theta = Math.toRadians(i * 72);
-            int _x = (int) (100 * Math.cos(theta));
-            int _y = (int) (100 * Math.sin(theta));
-            x_list.add(_x);
-            y_list.add(_y);
-
-        }
-
-        gl.glColor3d(0, 1, 0);
-
-        for (int i = 0; i < 5; i++)
-        {
-            int j = i + 2;
-            if (j >= 5)
-                j = j % 5;
-            //System.out.println(i + "---i-------j---" + j);
-            drawLinechecker(gl,  x_list.get(i), y_list.get(i), x_list.get(j), y_list.get(j),0,1,0);
-
-        }
+        drawLine(gl, 0f, 0f, 100f, 0f);
+        drawLine(gl, 50f, -50f, 100f, 0f);
+        ;
     }
+
+
+    private void drawLine(GL2 gl, float x1, float y1, float x2, float y2) {
+        System.out.println(findZone(x1, y1, x2, y2));
+
+
+        float dx, dy, d, incE, incNE, x, y;
+        dx = x2 - x1;
+        dy = y2 - y1;
+        d = 2 * dy - dx;
+        incE = 2 * dy;
+        incNE = 2 * (dy - dx);
+        y = y1;
+
+        gl.glPointSize(3.5f);
+        gl.glBegin(GL2.GL_POINTS);
+
+        for (x = x1; x <= x2; x++) {
+            gl.glVertex2f(x, y);
+            if (d > 0) {
+                d = d + incNE;
+                y = y + 1;
+            } else {
+                d = d + incE;
+            }
+        }
+        gl.glEnd();
+    }
+
+    public void dispose(GLAutoDrawable arg0) {
+
+    }
+
+
 
     private void drawLinechecker( GL2 gl, int x1, int y1, int x2, int y2, int r, int g, int b) {
         // TODO Auto-generated method stub
@@ -159,8 +170,34 @@ class ThirdGLEventListener implements GLEventListener {
                         int height) {
     }
 
-    public void displayChanged(GLAutoDrawable drawable,
-                               boolean modeChanged, boolean deviceChanged) {
+    public void displayChanged(GLAutoDrawable drawable, boolean modeChanged, boolean deviceChanged) {
+    }
+
+    private int findZone(float x1, float y1, float x2, float y2) {
+        float dx = x2 - x1;
+        float dy = y2 - y1;
+
+        if (Math.abs(dx) >= Math.abs(dy)) {
+            if (dx > 0 && dy > 0) {
+                return 0;
+            } else if (dx > 0 && dy < 0) {
+                return 7;
+            } else if (dx < 0 && dy > 0) {
+                return 3;
+            } else {
+                return 4;
+            }
+        } else {
+            if (dy > 0 && dx > 0) {
+                return 1;
+            } else if (dy > 0 && dx < 0) {
+                return 2;
+            } else if (dy < 0 && dx > 0) {
+                return 6;
+            } else {
+                return 5;
+            }
+        }
     }
 
     private void drawLine0(int zone,GL2 gl, int x1, int y1, int x2, int y2) {
@@ -499,12 +536,9 @@ class ThirdGLEventListener implements GLEventListener {
         gl.glEnd();//end drawing of points
 
     }
-    public void dispose(GLAutoDrawable arg0)
-    {
 
-    }
 }
-public class star_draw
+public class drawthestar
 {
     public static void main(String args[])
     {
@@ -517,7 +551,7 @@ public class star_draw
         glcanvas.addGLEventListener(b);
         glcanvas.setSize(400, 400);
         //creating frame
-        final JFrame frame=new JFrame("Basic frame");
+        final JFrame frame=new JFrame("Star Drawing Algorithm");
         //adding canvas to frame
         frame.add(glcanvas);
         frame.setSize(640,480);
