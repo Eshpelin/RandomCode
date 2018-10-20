@@ -2,6 +2,12 @@
   <library name="EXTRACTEDJAR">
     <CLASSES>
       <root url="file://$PROJECT_DIR$/../../JOGL/EXTRACTEDJAR" />
+      <root url="jar://$PROJECT_DIR$/../JOGL/gluegen-rt-natives-linux-amd64.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JOGL/gluegen-rt-natives-windows-amd64.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JOGL/gluegen-rt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JOGL/jogl-all-natives-linux-amd64.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JOGL/jogl-all-natives-windows-amd64.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JOGL/jogl-all.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
