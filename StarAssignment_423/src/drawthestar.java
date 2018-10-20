@@ -1,5 +1,4 @@
 
-import java.util.ArrayList;
 
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
@@ -9,7 +8,6 @@ import com.jogamp.opengl.GLProfile;
 import com.jogamp.opengl.awt.GLCanvas;
 import com.jogamp.opengl.glu.GLU;
 import java.lang.Math;
-import java.util.Scanner;
 
 import javax.swing.JFrame;
 
@@ -30,7 +28,7 @@ class ThirdGLEventListener implements GLEventListener {
         gl.glViewport(-250, -150, 250, 150);
         gl.glMatrixMode(GL2.GL_PROJECTION);
         gl.glLoadIdentity();
-        glu.gluOrtho2D(-250.0, 250.0, -150.0, 150.0);
+        glu.gluOrtho2D(-3000.0, 3000.0, -3000.0, 3000.0);
     }
 
 
@@ -41,16 +39,22 @@ class ThirdGLEventListener implements GLEventListener {
         /*
          * put your code here
          */
-        drawLine(gl, 2f, 14f, 3.5f, 9f);
-        drawLine(gl, 3.5f, 9f, 0f, 5.5f);
-        drawLine(gl, 0f, 5.5f, 5f, 5f);
-        drawLine(gl, 5f, 5f, 6.5f, 0f);
-        drawLine(gl, 6.5f, 0f, 9f, 5f);
-        drawLine(gl, 9f, 5f, 14f, 5.5f);
-        drawLine(gl, 14f, 5.5f, 10.5f, 9f);
-        drawLine(gl, 10.5f, 9f, 12f, 14f);
-        drawLine(gl, 12f, 14f, 6.5f, 11.5f);
-        drawLine(gl, 6.5f, 11.5f, 2f, 14f);
+//
+//        drawLine(gl, 0f, 0f, 100f, 0f);
+//        drawLine(gl, 50f, -50f, 100f, 0f);
+
+
+
+        drawLine(gl, 200f, 1400f, 350f, 900f);
+        drawLine(gl, 350f, 900f, 0f, 550f);
+        drawLine(gl, 0f, 550f, 500f, 500f);
+        drawLine(gl, 500f, 500f, 650f, 0f);
+        drawLine(gl, 650f, 0f, 900f, 500f);
+        drawLine(gl, 900f, 500f, 1400f, 550f);
+        drawLine(gl, 1400f, 550f, 1050f, 900f);
+        drawLine(gl, 1050f, 900f, 1200f, 1400f);
+        drawLine(gl, 1200f, 1400f, 650f, 1150f);
+        drawLine(gl, 650f, 1150f, 200f, 1400f);
 
         ;
     }
