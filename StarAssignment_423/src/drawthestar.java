@@ -45,16 +45,16 @@ class ThirdGLEventListener implements GLEventListener {
 
 
 
-        drawLine(gl, 200f, 1400f, 350f, 900f);
-        drawLine(gl, 350f, 900f, 0f, 550f);
-        drawLine(gl, 0f, 550f, 500f, 500f);
-        drawLine(gl, 500f, 500f, 650f, 0f);
-        drawLine(gl, 650f, 0f, 900f, 500f);
-        drawLine(gl, 900f, 500f, 1400f, 550f);
-        drawLine(gl, 1400f, 550f, 1050f, 900f);
-        drawLine(gl, 1050f, 900f, 1200f, 1400f);
-        drawLine(gl, 1200f, 1400f, 650f, 1150f);
-        drawLine(gl, 650f, 1150f, 200f, 1400f);
+        drawLinechecker(gl, 200, 1400, 350, 900);
+        drawLinechecker(gl, 350, 900, 0, 550);
+        drawLinechecker(gl, 0, 550, 500, 500);
+        drawLinechecker(gl, 500, 500, 650, 0);
+        drawLinechecker(gl, 650, 0, 900, 500);
+        drawLinechecker(gl, 900, 500, 1400, 550);
+        drawLinechecker(gl, 1400, 550, 1050, 900);
+        drawLinechecker(gl, 1050, 900, 1200, 1400);
+        drawLinechecker(gl, 1200, 1400, 650, 1150);
+        drawLinechecker(gl, 650, 1150, 200, 1400);
 
         ;
     }
