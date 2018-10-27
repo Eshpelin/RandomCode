@@ -93,7 +93,7 @@ class ThirdGLEventListener implements GLEventListener {
 
 
 
-    private void drawLinechecker( GL2 gl, int x1, int y1, int x2, int y2, int r, int g, int b) {
+    private void drawLinechecker( GL2 gl, int x1, int y1, int x2, int y2) {
         // TODO Auto-generated method stub
 
         int zone=10;
